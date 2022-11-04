@@ -3,6 +3,7 @@
 namespace App\Utility;
 
 use App\Models\General\Setting;
+use Illuminate\Support\Facades\Cache;
 
 class AppSettingUtility
 {

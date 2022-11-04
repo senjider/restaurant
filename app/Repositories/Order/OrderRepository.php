@@ -6,11 +6,20 @@ use App\Models\Order\Order;
 use App\Models\Order\OrderDetails;
 
 use App\Repositories\Interfaces\Order\OrderInterface;
+use App\Repositories\Interfaces\Product\ProductInterface;
+
 use Carbon\Carbon;
 use DB;
 
 class OrderRepository implements OrderInterface
 {
+    protected $product;
+
+    public function __construct(ProductInterface $product)
+    {
+        $this->product = $product;
+    }
+
     public function getDetail($id)
     {
         return OrderDetail::find($id);
