@@ -16,6 +16,7 @@ class CreateProductIngredientsTable extends Migration
         Schema::create('product_ingredients', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('product_id');
+            $table->string('name', 190);
             $table->string('weight', 2)->default('kg');
             $table->double('consumes')->nullable()->default(0);
             $table->double('main_stock')->nullable()->default(0);
