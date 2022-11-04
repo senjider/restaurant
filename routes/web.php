@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderDomain\OrderController;
+use App\Http\Controllers\ProductDomain\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('make-order', [OrderController::class,'makeOrder']);
+Route::post('update-stock', [ProductController::class,'updateStock']);
