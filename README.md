@@ -11,15 +11,15 @@
     Body Example: 
     ```json
     {
-       "products": [
-                {
-                   "product_id": 1,
-                   "quantity": 2
-                },
-                {
-                    "product_id": 2,
-                    "quantity": 5
-                }
+        "products": [
+            {
+                "product_id": 1,
+                "quantity": 2
+            },
+            {
+                "product_id": 2,
+                "quantity": 5
+            }
         ]
     }
 
