@@ -9,7 +9,7 @@
 - **Create order:**<br />
     POST: APP_URL/make-order<br />
     Body Example: 
-    `json
+    ```json
         {
            "products": [
                 {
@@ -28,7 +28,7 @@
 
     POST: APP_URL/update-stock<br />
     Body Example: 
-    `json
+    ```json
     {
         "product_id": 1,
         "quantity": 2
