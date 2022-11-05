@@ -7,18 +7,21 @@
 ### Test requests
 - **Create order:**<br />
     POST: APP_URL/make-order<br />
-    Body Example: {<br />
-   _________________"products": [<br />
-   _____________________________"{<br />
-   _____________________________"product_id": 1,<br />
-   _____________________________"quantity": 2<br />
-                            },<br />
-                            {<br />
-                                "product_id": 2,<br />
-                                "quantity": 5<br />
-                            }<br />
-                        ]<br />
-                    }<br />
+    Body Example: 
+    ```json
+        {
+           "products": [
+           {
+               "product_id": 1,
+               "quantity": 2
+            },
+            {
+                "product_id": 2,
+                "quantity": 5
+            }
+        ]
+    }
+```
 <br />
 <br />
 
