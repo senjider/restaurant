@@ -10,8 +10,8 @@
     POST: APP_URL/make-order<br />
     Body Example: 
     ```json
-        {
-           "products": [
+    {
+       "products": [
                 {
                    "product_id": 1,
                    "quantity": 2
