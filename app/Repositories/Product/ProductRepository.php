@@ -7,9 +7,18 @@ use App\Repositories\Interfaces\Product\ProductInterface;
 
 use Carbon\Carbon;
 use DB;
+use PhpParser\Node\Expr\Cast\Object_;
 
 class ProductRepository implements ProductInterface
 {
+    /**
+     * Update product ingredient stock
+     *
+     * @param    integer  $id product id
+     * @param    integer  $quantity product quantity to deduct
+     *
+     * @return boolean
+     */
     public function updateStock($id, $quantity):bool{
         $product = Product::where('id', $id)->first();
         if($product){
@@ -26,6 +35,13 @@ class ProductRepository implements ProductInterface
         return false;
     }
 
+    /**
+     * Check ingredient stock limit to send email alert
+     *
+     * @param    object  $ingredient
+     *
+     * @return void
+     */
     public function ingredientCheck($ingredient):void{
         $merchantEmail = settingHelper('merchant_email');
         //alert mail once

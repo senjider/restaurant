@@ -20,12 +20,26 @@ class OrderRepository implements OrderInterface
         $this->product = $product;
     }
 
+    /**
+     * get order details
+     *
+     * @param    integer  $id order id
+     *
+     * @return object
+     */
     public function getDetail($id)
     {
         return OrderDetail::find($id);
     }
 
-    public function confirmOrder($data)
+    /**
+     * store order with it\'s order details
+     *
+     * @param    array  $data
+     *
+     * @return boolean
+     */
+    public function confirmOrder($data):bool
     {
         $order = Order::create([
             'user_id'   => $data['user'],
