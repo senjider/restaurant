@@ -28,11 +28,13 @@ class OrderController extends Controller
 
             if ($order) {
                 $data = [
-                    'success' => __('Order done')
+                    'status' => true,
+                    'message' => 'Order Created!'
                 ];
             } else {
                 $data = [
-                    'error' => 'Order failed'
+                    'status' => false,
+                    'message' => 'Order failed'
                 ];
             }
             DB::commit();
@@ -40,7 +42,8 @@ class OrderController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
             return response()->json([
-                'error' => __('Oops.....Something Went Wrong')
+                'status' => false,
+                'message' => 'Oops.....Something Went Wrong'
             ]);
         }
     }

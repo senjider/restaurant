@@ -21,11 +21,13 @@ class ProductController extends Controller
             if ($request->product_id && $request->quantity) {
                 $this->product->updateStock($request->product_id, $request->quantity);
                 $data = [
-                    'success' => __('Update stock done')
+                    'status' => true,
+                    'message' => 'Update stock done'
                 ];
             } else {
                 $data = [
-                    'error' => 'product ID or quantity is missing'
+                    'status' => true,
+                    'message' => 'product ID or quantity is missing'
                 ];
             }
             DB::commit();
@@ -33,7 +35,8 @@ class ProductController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
             return response()->json([
-                'error' => __('Oops.....Something Went Wrong')
+                'status' => false,
+                'message' => 'Oops.....Something Went Wrong'
             ]);
         }
     }
